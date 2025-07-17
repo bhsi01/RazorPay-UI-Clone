@@ -1,0 +1,49 @@
+0	First Install Node
+
+1	npm init -y
+
+2	npm install -D tailwindcss postcss autoprefixer vite
+
+3	npx tailwindcss init -p
+
+4	In tailwind.config.js	(  content=["*"]  )
+		/** @type {import('tailwindcss').Config} */
+		module.exports = {
+//Over Here  	content: ["*"],	//Over Here
+  		theme: {
+    		extend: {},
+  		},
+		  plugins: [],
+		}
+
+5	In package.json  (  in script ->  "start":"vite",  )
+                            {
+                              "name": "new-folder",
+                              "version": "1.0.0",
+                              "main": "index.js",
+                              "scripts": {
+//Over Here           "start": "vite",	//Over Here
+                                "test": "echo \"Error: no test specified\" && exit 1"
+                              },
+                              "keywords": [],
+                              "author": "",
+                              "license": "ISC",
+                              "description": "",
+                              "devDependencies": {
+                                "autoprefixer": "^10.4.20",
+                                "postcss": "^8.4.45",
+                                "tailwindcss": "^3.4.10",
+                                "vite": "^5.4.3"
+                              }
+                            }
+
+6	Create main.css and add these lines
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+7	Create index.html and link main.css
+
+8	npm run start
+
+9	To End press Ctrl+C
